@@ -10,4 +10,18 @@
 
 В зависимости от того что ввел пользователь либо прекращаем цикл и выводим резульиаи игры сколько угадываний и косяков, либо повторяем цикл загово.
 
+    cnt_good = 0
+    cnt_bad = 0
+    continue = 'yes'
+
+    while continue != 'no':
+        ...
+        gess = input()
+        if ....
+        continue = input()
+        if continue != 'no' and continue != 'yes'
+            continue
+        ...
+        ...
+
 
