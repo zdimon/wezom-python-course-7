@@ -7,6 +7,7 @@ with open('people.txt', 'r') as file:
         # ['1.txt','Vasya']
         line_list = line.split(';')
         print(line_list[1])
+        print(':::'.join(line_list))
         # tmp_file = open(f'{num}.txt','w')
         # tmp_file.write(line)
         # tmp_file.close()
