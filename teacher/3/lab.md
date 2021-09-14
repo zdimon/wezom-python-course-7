@@ -15,9 +15,12 @@
     continue = 'yes'
 
     while continue != 'no':
-        ...
+        define random number
         gess = input()
-        if ....
+        if gess ok:
+            add counter
+        else
+            subtract counter
         continue = input()
         if continue != 'no' and continue != 'yes'
             continue
