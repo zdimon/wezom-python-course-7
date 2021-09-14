@@ -12,7 +12,7 @@
 
     cnt_good = 0
     cnt_bad = 0
-    continue = 'yes'
+    is_continue = 'yes'
 
     while continue != 'no':
         define random number
@@ -21,10 +21,13 @@
             add counter
         else
             subtract counter
-        continue = input()
-        if continue != 'no' and continue != 'yes'
+        is_continue = input()
+        if is_continue != 'no' and continue != 'yes'
             continue
         ...
         ...
 
+word_word_ff
+WordWord
+my-name-is-dima
 
