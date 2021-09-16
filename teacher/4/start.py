@@ -1,15 +1,9 @@
-lst = [1,2,3,4]
+from gamelib import make_deck
+import telebot
+key = '1765842295:AAH_Vj8ti5WSjsU5mUFS7U3tOY2AmCinkAY'
+bot = telebot.TeleBot(key)
 
-u = {
-    "name": "Sasha",
-    "age": 34,
-    "cards": [{"img": "/dama.png"}, {"img": "/dama.png"}]
-}
-
-faces = ["diamond", "heart", "spade", "clubs"]
-
-ranks = [2,3,4,5,6,7,8,9,10]
-
-# ["diamond2", "diamond3"]
-
-print(u["cards"][0]["img"])
+# deck = make_deck()
+# print(deck)
+print('Starting bot.....')
+bot.polling()
