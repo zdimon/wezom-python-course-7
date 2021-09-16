@@ -10,6 +10,5 @@ Cоздание ВО
 
 Установка библиотеки
 
-    pip install pyTelegramBotAPI
+    pip install pyTelegramBotAPI==4.0.1
 
-    
