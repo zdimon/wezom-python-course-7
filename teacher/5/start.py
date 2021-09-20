@@ -16,6 +16,12 @@ from db import read_db, write_db, add_user
 #     {"username": 'ddd', "ctat_id": }
 # ]
 
+@bot.message_handler()
+def just_a_message(message):
+    print(message.json['text'])
+
+
+
 @bot.message_handler(commands=['start'])
 def start_message(message):
     deck = make_deck()
