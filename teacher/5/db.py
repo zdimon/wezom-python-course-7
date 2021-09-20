@@ -13,6 +13,12 @@ def write_db(content_obj):
         f.write(content_str)  
 
 def add_user(username,chat_id):
+    flag_is_exist = False
     db = read_db()
-    проверять
-    write_db(db)
+    for item in db:
+        if chat_id == item["chat_id"]:
+            flag_is_exist = True
+            break
+    if flag_is_exist == False:
+        db.append({"username": username, "chat_id": chat_id})
+        write_db(db)

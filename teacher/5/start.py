@@ -6,7 +6,7 @@ import random
 
 import os.path
 import json
-from db import read_db, write_db
+from db import read_db, write_db, add_user
 
 # s = json.loads('[1,2,3]') json.dumps([1,2,3])
 
@@ -21,11 +21,11 @@ def start_message(message):
     deck = make_deck()
     rc = random.randint(0,len(deck)-1)
     bot.send_message(message.chat.id, deck[rc]["name"])
-
+    add_user(message.from_user.username, message.chat.id)
     # записываю в бд
-    users = read_db()
-    users.append({"username": message.from_user.username, "chat_id": message.chat.id})
-    write_db(users)
+    # users = read_db()
+    # users.append({"username": message.from_user.username, "chat_id": message.chat.id})
+    # write_db(users)
 
     #bot.send_photo(chat_id=message.chat.id, #photo=open(f'cards/{deck[rc]["name"]}', 'rb'))
     #photo=open('cards/1.jpeg','rb'))
