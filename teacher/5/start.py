@@ -21,7 +21,14 @@ def start_message(message):
     deck = make_deck()
     rc = random.randint(0,len(deck)-1)
     bot.send_message(message.chat.id, deck[rc]["name"])
-    add_user(message.from_user.username, message.chat.id)
+    rezult = add_user(message.from_user.username, message.chat.id)
+
+    db = read_db()
+    for user in db:
+        if rezult:
+            mes = 'У нас новый чел %s' % message.from_user.username
+            bot.send_message(user["chat_id"], mes)
+
     # записываю в бд
     # users = read_db()
     # users.append({"username": message.from_user.username, "chat_id": message.chat.id})

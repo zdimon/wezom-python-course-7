@@ -22,3 +22,6 @@ def add_user(username,chat_id):
     if flag_is_exist == False:
         db.append({"username": username, "chat_id": chat_id})
         write_db(db)
+        return True
+    else:
+        return False
