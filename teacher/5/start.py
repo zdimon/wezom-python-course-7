@@ -28,7 +28,7 @@ def start_message(message):
     write_db(users)
 
     #bot.send_photo(chat_id=message.chat.id, #photo=open(f'cards/{deck[rc]["name"]}', 'rb'))
-    photo=open('cards/1.jpeg','rb'))
+    #photo=open('cards/1.jpeg','rb'))
 
 
     #bot.send_message(message.chat.id, 'Привет %s, ты написал мне /start' % message.from_user.username)
