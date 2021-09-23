@@ -26,6 +26,12 @@ pelican-quickstart
 
     pelican --listen
 
+Берем шаблоны
 
+    git clone git@github.com:getpelican/pelican-themes.git
+
+Прописываем шаблон в pelicanconf.py
+
+    THEME = "pelican-themes/bootstrap"
 
 
