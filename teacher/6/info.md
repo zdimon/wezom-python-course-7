@@ -34,4 +34,24 @@ pelican-quickstart
 
     THEME = "pelican-themes/bootstrap"
 
+# Джанго
+
+    pip install Django
+
+Создание проекта
+
+    django-admin startproject blog
+
+Создание БД
+
+    cd blog
+    ./manage.py migrate
+
+Создание пользователя
+
+    ./manage.py createsuperuser
+
+Запуск сервера
+
+    ./manage.py runserver 0.0.0.0:8000
 
