@@ -1,0 +1,27 @@
+<html>
+    <head>
+    </head>
+
+    <body>
+        <h1>Test</h1>
+        <form method="POST" action="/check/">
+         {% csrf_token %} 
+            <ul>
+            {% for q in questions%}
+                <li>{{ q.question }}</li>
+                <ul>
+                    {% for opt in  q.answers %}
+                        <li>
+                        {{ opt.text }}
+                        <input value="{{ forloop.counter }}" name="{{q.name}}" type="radio" />
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+            </ul>
+
+            <input type="submit" value="Проверить" name="Проверить" />
+        </form>
+
+    </body>
+</html>
