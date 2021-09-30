@@ -20,7 +20,7 @@
     </div>
 
     <div id="mydiv">
-        <h1> Hello World </h1>
+        <h1> Hello World click me</h1>
     </div>
 
     <div class="avatar">
@@ -31,6 +31,9 @@
         <img src="/images/2.jpg" />
     </div>
 
+    <button id="btn" class="btn">Hello!</button>
+
+    <!-- 
     <table border=1>
         <tr>
             <td>1</td>
@@ -40,7 +43,26 @@
             <td>5</td>
         </tr>
     </table>
+   -->
 
+     <script>
+        var name = "Dima";
+        var lst = [1,2,3,4,5];
+        var obj = {
+            "name": "Vova"
+        };
+
+        // var mydiv = document.getElementById("mydiv");
+        // console.log(mydiv);
+
+        var mydiv = $("#mydiv");
+        console.log(mydiv);
+        mydiv.on("click", function() {
+            // alert('Hello');
+            $("#btn").hide();
+        });
+
+     </script>
 
     </body>
 </html>
