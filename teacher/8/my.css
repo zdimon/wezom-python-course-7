@@ -1,0 +1,18 @@
+
+
+#mydiv {
+    border: 4px dotted green;
+}
+
+.avatar img {
+    width: 100px;
+    height: 100px;
+}
+
+.avatar {
+    border: 2px solid green;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;   
+    overflow: hidden; 
+}
