@@ -15,6 +15,30 @@
     </head>
     <body>
 
+
+    <video id="videoElement" autoplay>
+     
+    </video>
+
+   
+        <script type="text/javascript">
+          var video = document.querySelector("#videoElement");
+          navigator.getUserMedia = navigator.getUserMedia||navigator.webkitGetUserMedia||navigator.mozGetUserMedia||navigator.msGetUserMedia||navigator.oGetUserMedia;
+    
+          if(navigator.getUserMedia) {
+            navigator.getUserMedia({video:true}, handleVideo, videoError);
+          }
+    
+          function handleVideo(stream) {
+            video.srcObject=stream;
+            video.play();
+          }
+    
+          function videoError(e) {
+    
+          }
+        </script>
+
     <div class="page">
         <h1> Hello World </h1>
     </div>
@@ -30,8 +54,15 @@
     <div class="avatar">
         <img src="/images/2.jpg" />
     </div>
+    <input id="login" type="text" />
+    <input type="radio" />
+    <input type="checkbox" />
 
     <button id="btn" class="btn">Hello!</button>
+
+    <div id="qwerty"></div>
+
+
 
     <!-- 
     <table border=1>
@@ -57,10 +88,32 @@
 
         var mydiv = $("#mydiv");
         console.log(mydiv);
-        mydiv.on("click", function() {
+        $("#btn").on("click", function() {
             // alert('Hello');
-            $("#btn").hide();
+            //$("#btn").hide();
+            var log = $("#login").val();
+            if(log === '123') {
+                console.log('yes');
+            } else {
+                 console.log('no');
+            }
+            console.log($("#login").val());
+        var ddd = $("#qwerty");
+        for(var i=1; i<10; i=i+1){
+            ddd.append(`<img src="/images/${i}.jpg" />`);
+        }
         });
+
+        var g = [1,2,3,4,5];
+        var ddd = $("#qwerty");
+        g.map(function(el) {
+           ddd.append(`<img src="/images/${el}.jpg" />`);
+        });
+
+
+
+
+        ///var login = prompt('ssss');
 
      </script>
 
