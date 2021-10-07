@@ -3,7 +3,7 @@ from main.models import Page, Category, Product
 
 
 class PageAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['title', 'content', 'alias']
 
 admin.site.register(Page, PageAdmin)
 
