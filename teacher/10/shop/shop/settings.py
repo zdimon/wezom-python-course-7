@@ -132,3 +132,5 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = '/media/'
+
+IMAGE_CROPPING_JQUERY_URL = '/static/admin/js/vendor/jquery/jquery.js'
