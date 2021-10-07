@@ -4,7 +4,8 @@ from main.models import Page, Category, Product
 def index(request):
     page = Page.objects.get(alias='mainpage')
     cats = Category.objects.all()
-    products = Product.objects.all()
+    cat = Category.objects.get(name='food')
+    products = Product.objects.filter(category=cat)
     return render(request,'index.html', {"page": page, "cats": cats, "products": products})
 
 

@@ -13,7 +13,15 @@
 
           <ul>
             {% for p in products %}
-              <li class="product"> {{ p.name }} </li>
+              <li class="product"> 
+                
+                {{ p.image_tag }}
+
+                {{ p.name }} 
+
+                <p> {{ p.category.name }} </p>
+              
+              </li>
             {% endfor %}
           </ul>
 

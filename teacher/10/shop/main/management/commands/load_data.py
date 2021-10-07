@@ -33,7 +33,7 @@ class Command(BaseCommand):
                 p.category = nc
                 p.save()
 
-                image_path = f'{BASE_DIR}/data/images/w1.jpg'
+                image_path = f'{BASE_DIR}/data/images/w{i}.jpg'
                 print(image_path)
                 p.image.save('test.jpg',File(open(image_path, 'rb')))
 
