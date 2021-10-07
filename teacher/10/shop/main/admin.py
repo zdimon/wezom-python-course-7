@@ -14,7 +14,7 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', 'category']
+    list_display = ['name', 'category', 'image_tag']
     list_filter = ['category']
     search_fields = ['name']
 

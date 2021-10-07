@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand, CommandError
-
+from django.core.files import File 
 from main.models import Page, Category, Product
-
+from shop.settings import BASE_DIR
 cats = ['cars', 'food', 'milk']
 
 class Command(BaseCommand):
@@ -32,6 +32,10 @@ class Command(BaseCommand):
                 p.name = f'product {i}'
                 p.category = nc
                 p.save()
+
+                image_path = f'{BASE_DIR}/data/images/w1.jpg'
+                print(image_path)
+                p.image.save('test.jpg',File(open(image_path, 'rb')))
 
 
 
