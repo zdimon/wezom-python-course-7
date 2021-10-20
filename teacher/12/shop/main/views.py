@@ -46,7 +46,7 @@ def index(request):
         page_number = request.GET['page']
     except:
         page_number = 1
-        
+
     page = Page.objects.get(alias='mainpage')
     cats = Category.objects.all()
     cat = Category.objects.get(name='food')
@@ -74,3 +74,12 @@ def feedback(request):
 
     cats = Category.objects.all()
     return render(request,'feedback.html', {"cats": cats, "message": message})
+
+
+def search(request):
+    cats = Category.objects.all()
+    keyword = request.GET.get('keyword','food')
+
+    products = Product.objects.filter(name__contains=keyword)
+
+    return render(request,'search.html',{"keyword": keyword, "products": products})

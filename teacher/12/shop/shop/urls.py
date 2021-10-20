@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import index, about, feedback, filter, product_detail , make_order
+from main.views import index, about, feedback, filter, product_detail , make_order, search
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +25,7 @@ urlpatterns = [
     path('filter/<int:category_id>', filter),
     path('product/detail/<int:product_id>', product_detail),
     path('make/order', make_order),
+    path('search', search),
 ]
 
 

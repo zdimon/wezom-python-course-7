@@ -12,22 +12,7 @@
             <span>{{ page.content }}</span>
           </div>
 
-          <ul>
-            {% for p in products %}
-              <li class="product"> 
-                
-               
-                <a href="/product/detail/{{p.id}}">
-                <img src="{% thumbnail p.image 200x200 box=p.cropping crop detail %}">
-                </a>
-
-                {{ p.name }} 
-
-                <p> {{ p.category.name }} </p>
-              
-              </li>
-            {% endfor %}
-          </ul>
+          {% include 'parts/products.html' %}
 
           {% if products.has_previous %}
             <a href="/?page={{ products.previous_page_number }}">Prev</a>
