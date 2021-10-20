@@ -1,5 +1,5 @@
 from django.contrib import admin
-from main.models import Page, Category, Product
+from main.models import Page, Category, Product, Order
 from image_cropping import ImageCroppingMixin
 
 class PageAdmin(admin.ModelAdmin):
@@ -19,3 +19,11 @@ class ProductAdmin(ImageCroppingMixin, admin.ModelAdmin):
     search_fields = ['name']
 
 admin.site.register(Product, ProductAdmin)
+
+
+
+
+class OrderAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Order, OrderAdmin)

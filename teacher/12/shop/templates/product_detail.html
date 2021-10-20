@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+        
+            <h2>{{ product.name }} {{ product.id }}</h2>
+
+            <img src="{{ product.image.url }}" />
+          
+          <form method="POST" action="/make/order">
+          {% csrf_token %}
+
+          <input type="hidden" name="product_id" value="{{ product.id }}" />
+
+          Телефон <input type="text" name="phone" />
+
+
+          <button>Сделать заказ</button>
+          
+          </form>
+
+          <hr />
+          <h2>Comments</h2>
+
+          {% for comment in comments %}
+              <div class="comment">
+                {{ comment.content }}
+              </div>
+          {% endfor %}
+          <hr />
+
+
+          <h2>Add comment</h2>
+          <form method="POST" action="">
+          {% csrf_token %}
+
+          <input type="hidden" name="product_id" value="{{ product.id }}" />
+
+          Message
+          <textarea name="message" coll=30>
+
+          </textarea>
+
+
+
+
+          <button>Сохранить сообщение</button>
+          
+          </form>
+
+
+
+
+{% endblock %}
+

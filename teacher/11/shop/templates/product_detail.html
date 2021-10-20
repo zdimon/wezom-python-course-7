@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+        
+            <h2>{{ product.name }} {{ product.id }}</h2>
+
+            <img src="{{ product.image.url }}" />
+          
+          <form>
+
+          <input type="hidden" name="product_id" value="{{ product.id }}" />
+          
+          </form>
+{% endblock %}

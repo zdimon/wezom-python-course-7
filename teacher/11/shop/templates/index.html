@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% load cropping thumbnail %}
 
 {% block content %}
         <div class="top-header">
@@ -15,7 +16,9 @@
             {% for p in products %}
               <li class="product"> 
                 
-                {{ p.image_tag }}
+               
+
+                <img src="{% thumbnail p.image 200x200 box=p.cropping crop detail %}">
 
                 {{ p.name }} 
 

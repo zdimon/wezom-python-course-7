@@ -1,0 +1,15 @@
+li.product {
+    display: block;
+}
+
+img {
+    width: auto !important;
+}
+
+.comment {
+    background-color: aqua;
+    margin-top: 5px;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+}
