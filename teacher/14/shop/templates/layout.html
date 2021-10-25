@@ -109,6 +109,7 @@ https://www.tooplate.com/view/2116-blugoon
               {% if not user.is_authenticated %}
                 {% include 'parts/login_form.html' %}
               {% else %}
+                <h3>Wellcome {{ user.username }}</h3>
                 <a href="/logout" >Выйти</a>
               {% endif %}
             </div>

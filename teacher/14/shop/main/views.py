@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from main.models import Page, Category, Product, Order, Testimonial, ProductImage
+from main.models import Page, Category, Product, Order, Testimonial, ProductImage, Cart
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
 from django.contrib import messages
@@ -121,3 +121,28 @@ from django.contrib.auth import logout as l
 def logout(request):
     l(request)
     return render(request,'logout.html')
+
+from django.contrib.auth.models import User
+
+def registration(request):
+    if request.method == 'POST':
+        user = User()
+        user.username = request.POST.get('username','')
+        user.set_password(request.POST.get('password',''))
+        user.is_active = True
+        user.save()
+        messages.info(request, 'Вы были успешно зарегистрированы!')
+        login(request,user)
+    return render(request,'registration.html')
+
+def add_to_cart(request,product_id):
+    product = Product.objects.get(id=product_id)
+    try:
+        c = Cart.objects.get(user=request.user,product=product)
+    except:
+        c = Cart()
+        c.user = request.user
+        c.product = product
+        c.save()
+    products = Cart.objects.filter(user=request.user)
+    return render(request,'cart.html',{"product": product, "products": products})

@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from main.views import index, about, feedback, filter, product_detail , make_order, search, logout
+from main.views import *
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +29,8 @@ urlpatterns = [
     path('search', search),
     path('tinymce/', include('tinymce.urls')),
     path('logout', logout),
+    path('registration', registration),
+    path('add/to/cart/<int:product_id>', add_to_cart),
 ]
 
 

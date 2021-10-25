@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.html import mark_safe
 from image_cropping import ImageRatioField, ImageCropField
 from tinymce.models import HTMLField
+from django.contrib.auth.models import User
 
 class Page(models.Model):
     title = models.CharField(max_length=250)
@@ -56,3 +57,15 @@ class ProductImage(models.Model):
     title = models.CharField(max_length=250)
     image = models.ImageField(upload_to='products', null=True, blank=True)
     product = models.ForeignKey(Product,on_delete=models.CASCADE)
+
+
+
+class Cart(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+
+class CartOrder(models.Model):
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    done = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

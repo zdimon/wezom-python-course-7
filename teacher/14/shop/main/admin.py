@@ -1,5 +1,5 @@
 from django.contrib import admin
-from main.models import Page, Category, Product, Order, Testimonial, ProductImage
+from main.models import Page, Category, Product, Order, Testimonial, ProductImage, Cart
 from image_cropping import ImageCroppingMixin
 
 class PageAdmin(admin.ModelAdmin):
@@ -41,3 +41,8 @@ class ProductImageAdmin(admin.ModelAdmin):
     pass
 
 admin.site.register(ProductImage, ProductImageAdmin)
+
+class CartAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Cart, CartAdmin)

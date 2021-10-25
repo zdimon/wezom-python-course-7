@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+         <h1>Корзина</h1>
+
+         <table>
+            {% for p in products %}
+                <tr>
+                    <td>{{ p.user.username }}</td>
+                    <td>{{ p.product.name }}</td>
+                    <td>{{ p.product.image_tag }}</td>
+                </tr>
+            {% endfor %}
+         </table>
+{% endblock %}
