@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+        
+            <h2>{{ product.name }} {{ product.id }}</h2>
+
+            <img src="{{ product.image.url }}" />
+
+            {{ product.desc|safe }}
+
+<div class="isotope-wrapper">
+  <div class="isotope-box">
+
+  {% for image in images %}
+        <div class="isotope-item" data-type="beach">
+          <figure class="snip1321">
+            <img src="{{ image.image.url }}" alt="woman at the beach">
+            <figcaption>
+              <a href="{{ image.image.url }}" data-lightbox="image-1" data-title="Caption"><i class="fa fa-search"></i></a>
+              <h4>{{ image.title }}</h4>
+              <span>{{ image.title }}</span>
+            </figcaption>
+          </figure>
+        </div>
+  {% endfor %}
+
+  </div>
+</div>
+          
+          <form method="POST" action="/make/order">
+          {% csrf_token %}
+
+          <input type="hidden" name="product_id" value="{{ product.id }}" />
+
+          Телефон <input type="text" name="phone" />
+
+
+          <button>Сделать заказ</button>
+          
+          </form>
+
+          <hr />
+          <h2>Comments</h2>
+
+          {% for comment in comments %}
+              <div class="comment">
+                {{ comment.content }}
+              </div>
+          {% endfor %}
+          <hr />
+
+
+          <h2>Add comment</h2>
+          <form method="POST" action="">
+          {% csrf_token %}
+
+          <input type="hidden" name="product_id" value="{{ product.id }}" />
+
+          Message
+          <textarea name="message" coll=30>
+
+          </textarea>
+
+
+
+
+          <button>Сохранить сообщение</button>
+          
+          </form>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

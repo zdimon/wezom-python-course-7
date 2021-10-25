@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load cropping thumbnail %}
+
+{% block content %}
+        <div class="top-header">
+        	<img src="/static/assets/images/aerobic-girls.jpg" alt="aerobic girls" />
+        </div>
+          <div class="section-heading">
+          
+            <h2>{{ page.title }}</h2>
+            <div class="line-dec"></div>
+            <span>{{ page.content }}</span>
+          </div>
+
+          {% include 'parts/products.html' %}
+
+          {% if products.has_previous %}
+            <a href="/?page={{ products.previous_page_number }}">Prev</a>
+          {% endif %}
+
+          Current page: {{ page_number }}
+          {% if products.has_next %}
+            <a href="/?page={{ products.next_page_number }}">Next</a>
+          {% endif %}
+
+{% endblock %}

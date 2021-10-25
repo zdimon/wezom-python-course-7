@@ -1,0 +1,30 @@
+li.product {
+    display: block;
+}
+
+img {
+    width: auto !important;
+}
+
+.comment {
+    background-color: aqua;
+    margin-top: 5px;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.red-color {
+    color: red;
+}
+
+.top-header {
+    border: 1px solid red;
+    border-radius: 5px;
+    padding-top: 5px;
+    height: 50px;
+}
+
+.messages {
+    color: red;
+}
