@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load cropping thumbnail %}
+
+{% block content %}
+       
+       <h1>Filter {{ current_category }}</h1>
+
+            {% for p in products %}
+              <li class="product"> 
+                
+               
+               <a href="/product/detail/{{ p.id }}">
+                <img src="{% thumbnail p.image 200x200 box=p.cropping crop detail %}">
+              </a>
+                {{ p.name }} 
+
+                <p> {{ p.category.name }} </p>
+              
+              </li>
+            {% endfor %}
+
+{% endblock %}

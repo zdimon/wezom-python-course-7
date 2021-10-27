@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+        <div class="top-header">
+        	<img src="/static/assets/images/aerobic-girls.jpg" alt="aerobic girls" />
+        </div>
+          <div class="section-heading">
+          
+            <h2>{{ page.title }}</h2>
+            <div class="line-dec"></div>
+            <span>{{ page.content }}</span>
+          </div>
+{% endblock %}
+
+{% block social %}  {% endblock %}
+
+
+
+
+{% block css %} 
+      
+      <link rel="stylesheet" href="/static/about.css" />
+
+{% endblock %}

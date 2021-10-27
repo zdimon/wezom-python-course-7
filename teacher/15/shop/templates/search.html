@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% load cropping thumbnail %}
+
+{% block content %}
+       <h2>Search <span class="red-color">{{ keyword }}</span> </h2>
+
+         {% include 'parts/products.html' %}
+
+{% endblock %}
+

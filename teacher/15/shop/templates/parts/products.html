@@ -1,0 +1,23 @@
+{% load cropping thumbnail %}
+
+          <ul>
+            {% for p in products %}
+              <li class="product"> 
+                
+                <a href="/product/detail/{{p.id}}">
+                <img src="{% thumbnail p.image 200x200 box=p.cropping crop detail %}">
+                </a>
+
+                {{ p.name }} 
+
+                <p> {{ p.category.name }} </p>
+                {% if user.is_authenticated %}
+                <a href="/add/to/cart/{{p.id}}">Добавить в корзину</a>
+                {% else %}
+
+                <a href="/registration">Регистрация</a>
+                {% endif %}
+              
+              </li>
+            {% endfor %}
+          </ul>
