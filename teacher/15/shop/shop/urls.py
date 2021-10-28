@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from main.views import *
+from feedback.views import feed
 
 
 urlpatterns = [
@@ -31,6 +32,7 @@ urlpatterns = [
     path('logout', logout),
     path('registration', registration),
     path('add/to/cart/<int:product_id>', add_to_cart),
+    path('feed', feed),
 ]
 
 

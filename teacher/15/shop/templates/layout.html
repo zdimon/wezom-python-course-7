@@ -58,7 +58,7 @@ https://www.tooplate.com/view/2116-blugoon
 
                 <li>
 
-                  <a href="/feedback">Обратная связь</a>
+                  <a href="/feed">Обратная связь</a>
                   
                   </li>
 
@@ -111,6 +111,11 @@ https://www.tooplate.com/view/2116-blugoon
               {% else %}
                 <h3>Wellcome {{ user.username }}</h3>
                 <a href="/logout" >Выйти</a>
+                {% if user.is_superuser %}
+                  <a href="add/category">
+                     Добавить категорию
+                  </a>
+                {% endif %}
               {% endif %}
             </div>
 

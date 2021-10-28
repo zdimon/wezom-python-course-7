@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'image_cropping',
     'tinymce',
+    'feedback'
 ]
 
 from easy_thumbnails.conf import Settings as thumbnail_settings
